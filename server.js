@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './')));
 
 // Optional: API endpoint to check if server is running
 app.get('/ping', (req, res) => {
@@ -17,7 +17,7 @@ app.get('/ping', (req, res) => {
 
 // Serve index.html for all other routes (for Single-Page Apps)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, './', 'index.html'));
 });
 
 // Start the server
