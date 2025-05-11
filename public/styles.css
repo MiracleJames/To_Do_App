@@ -1,0 +1,385 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    background-color: white;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 24px;
+    color: #ff6b6b;
+}
+
+.add-task-section {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.add-task-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #555;
+    gap: 10px;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.sidebar-item.active {
+    font-weight: 600;
+}
+
+.sidebar-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-btn, .today-btn, .settings-btn {
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #555;
+}
+
+.today-btn {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.nav-btn:hover, .today-btn:hover, .settings-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Weekdays layout */
+.weekdays {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.day-column {
+    min-width: 140px;
+    flex: 1;
+}
+
+.day-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.day-header.current-day {
+    background-color: #ffe8e8;
+}
+
+.day-name {
+    font-size: 14px;
+    color: #777;
+}
+
+.day-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.day-indicators {
+    display: flex;
+    gap: 5px;
+}
+
+.indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.indicator.red {
+    background-color: #ff6b6b;
+}
+
+.indicator.blue {
+    background-color: #4dabf7;
+}
+
+/* Task styles */
+.tasks-for-day {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time-task {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.task-card {
+    flex: 1;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-card.personal {
+    background-color: #fff4e6;
+    border-left: 4px solid #ff6b6b;
+}
+
+.task-card.work {
+    background-color: #e7f5ff;
+    border-left: 4px solid #4dabf7;
+}
+
+.task-card.health {
+    background-color: #ebfbee;
+    border-left: 4px solid #51cf66;
+}
+
+.task-card.education {
+    background-color: #fff9db;
+    border-left: 4px solid #fcc419;
+}
+
+.task-card.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.checkbox.checked {
+    background-color: #51cf66;
+    border-color: #51cf66;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-content h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    color: #ff6b6b;
+}
+
+/* Right sidebar for unstructured thoughts */
+.sidebar-right {
+    width: 300px;
+    background-color: white;
+    border-left: 1px solid #e0e0e0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.unstructured-thoughts {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.thoughts-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.thoughts-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffebee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f44336;
+}
+
+.thoughts-desc {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.task-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#taskInput {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.category-selector {
+    display: flex;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.category-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.category-dot:hover, .category-dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.category-dot.personal {
+    background-color: #ff6b6b;
+}
+
+.category-dot.work {
+    background-color: #4dabf7;
+}
+
+.category-dot.health {
+    background-color: #51cf66;
+}
+
+.category-dot.education {
+    background-color: #fcc419;
+}
+
+#addTaskBtn {
+    padding: 8px 10px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+#addTaskBtn:hover {
+    background-color: #fa5252;
+}
+
+/* Task list styles */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
